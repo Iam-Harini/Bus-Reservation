@@ -1,0 +1,40 @@
+-- Create and use the Bus_reservation database
+CREATE DATABASE Bus_reservation;
+USE Bus_reservation;
+
+-- Create the Bus table
+CREATE TABLE Bus (
+    busNo INT PRIMARY KEY,
+    ac BOOLEAN,
+    capacity INT,
+    fromToLocation VARCHAR(100)
+);
+
+-- Display the Bus table
+SELECT * FROM Bus;
+
+-- Create the Booking table with foreign key references to Bus and Account
+CREATE TABLE Booking (
+    Booking_No INT AUTO_INCREMENT PRIMARY KEY,
+    passenger_Name VARCHAR(50),
+    NumOfPassengers INT,
+    bus_no INT,
+    travel_date DATE,
+    user_id INT,
+    FOREIGN KEY (bus_no) REFERENCES Bus(busNo),
+    FOREIGN KEY (user_id) REFERENCES Account(user_id)
+);
+
+-- Display the Booking table
+SELECT * FROM Booking;
+
+-- Create the Account table
+CREATE TABLE Account (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    userName VARCHAR(50),
+    password VARCHAR(50),
+    accountType VARCHAR(10)
+);
+
+-- Display the Account table
+SELECT * FROM Account;
