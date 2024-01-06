@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class AccountDbAccess {
 
-    private static final String INSERT_ACCOUNT_QUERY = "INSERT INTO Account(userName, password, accountType) VALUES(?, ?, ?)";
+    private static final String INSERT_ACCOUNT_QUERY = "INSERT INTO Account (userName, password, accountType) VALUES (?, ?, ?)";
     private static final String DISPLAY_ACCOUNT_DETAILS_QUERY = "SELECT user_id, userName, accountType FROM Account WHERE user_id = ?";
     private static final String VALIDATE_ACCOUNT_QUERY = "SELECT password FROM Account WHERE user_id = ?";
     private static final String GET_ACCOUNT_TYPE_QUERY = "SELECT accountType FROM Account WHERE user_id = ?";
@@ -79,12 +79,12 @@ public class AccountDbAccess {
     public void closeAccount(int userId) throws Exception {
         try (Connection con = Db_connection.getConnection();
              PreparedStatement preparedStatement = con.prepareStatement("DELETE FROM Account WHERE user_id = ?")) {
-
+        	
+            BookingDbAccess bookingDbAccess = new BookingDbAccess();
+            bookingDbAccess.cancelBookingByUserId(userId);
+            
             preparedStatement.setInt(1, userId);
             preparedStatement.executeUpdate();
-
-            BookingDbAccess bookingDbAccess = new BookingDbAccess();
-            bookingDbAccess.cancelBooking(userId);
         } catch (SQLException e) {
             throw new Exception("Error closing account", e);
         }
