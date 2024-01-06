@@ -1,0 +1,361 @@
+--------Welcome to Chennai Travels--------
+1. Sign up
+2. Login
+3. Close Account
+4. Exit
+Please choose an option: 
+1
+****** Welcome to Account Creation Page ******
+Enter user name: 
+Arjun
+Please set Password:
+arju123
+Please Re-Enter Password:
+arju123
+Choose Account type:
+Press 1 for user account or 0 for admin account
+1
+----------------Account Details!---------------
+Hi! Arjun
+Your User Id is: 15
+Account Type: User
+Sign up successful! Now, please log in to access Your Account.
+--------Welcome to Chennai Travels--------
+1. Sign up
+2. Login
+3. Close Account
+4. Exit
+Please choose an option: 
+2
+****** Welcome to Login Page ******
+Enter your user Id: 
+15
+Enter your Password: 
+arju123
+****** Logging in Successfully! *******
+Welcome Arjun
+1. Booking
+2. Cancellation
+3. Show Booking History
+4. Logout
+Choose any one above options
+1
+*******Showing List of Buses******
+Bus No: 1
+Ac: Yes
+Capacity: 50
+Location: Chennai to Banglore
+-----------------------------------------
+Bus No: 2
+Ac: No
+Capacity: 60
+Location: Chennai to Hydrabad
+-----------------------------------------
+Bus No: 3
+Ac: Yes
+Capacity: 45
+Location: Chennai to Mumbai
+-----------------------------------------
+Bus No: 4
+Ac: No
+Capacity: 65
+Location: Chennai to kalkata
+-----------------------------------------
+Bus No: 5
+Ac: Yes
+Capacity: 50
+Location: Chennai to Goa
+-----------------------------------------
+Bus No: 9
+Ac: Yes
+Capacity: 40
+Location: chennai to kovai
+-----------------------------------------
+-----------------------------------------
+Enter Bus no: 
+5
+Enter name of passenger: 
+Arju
+Enter Num of Passengers including yourself: 
+2
+Enter date dd-mm-yyyy
+12-09-1928
+Available Seats for BusNo-5 On this date-12-09-1928 is: 50
+Do you want to confirm your booking? (yes/no): no
+Your Booking is not Confirmed
+1. Booking
+2. Cancellation
+3. Show Booking History
+4. Logout
+Choose any one above options
+1
+*******Showing List of Buses******
+Bus No: 1
+Ac: Yes
+Capacity: 50
+Location: Chennai to Banglore
+-----------------------------------------
+Bus No: 2
+Ac: No
+Capacity: 60
+Location: Chennai to Hydrabad
+-----------------------------------------
+Bus No: 3
+Ac: Yes
+Capacity: 45
+Location: Chennai to Mumbai
+-----------------------------------------
+Bus No: 4
+Ac: No
+Capacity: 65
+Location: Chennai to kalkata
+-----------------------------------------
+Bus No: 5
+Ac: Yes
+Capacity: 50
+Location: Chennai to Goa
+-----------------------------------------
+Bus No: 9
+Ac: Yes
+Capacity: 40
+Location: chennai to kovai
+-----------------------------------------
+-----------------------------------------
+Enter Bus no: 
+5
+Enter name of passenger: 
+Arjun
+Enter Num of Passengers including yourself: 
+2
+Enter date dd-mm-yyyy
+12-06-2021
+Available Seats for BusNo-5 On this date-12-06-2021 is: 50
+Do you want to confirm your booking? (yes/no): yes
+Your Booking is Confirmed
+----------------Booking Details!---------------
+Hi! Arjun
+Booking Number: 11
+For your User Id: 15
+Number of Passengers: 2
+Bus No: 5
+Ac: 1
+Location: Chennai to Goa
+Travel Date: 2021-06-12
+----------------Happy Journey!-----------------
+1. Booking
+2. Cancellation
+3. Show Booking History
+4. Logout
+Choose any one above options
+1
+*******Showing List of Buses******
+Bus No: 1
+Ac: Yes
+Capacity: 50
+Location: Chennai to Banglore
+-----------------------------------------
+Bus No: 2
+Ac: No
+Capacity: 60
+Location: Chennai to Hydrabad
+-----------------------------------------
+Bus No: 3
+Ac: Yes
+Capacity: 45
+Location: Chennai to Mumbai
+-----------------------------------------
+Bus No: 4
+Ac: No
+Capacity: 65
+Location: Chennai to kalkata
+-----------------------------------------
+Bus No: 5
+Ac: Yes
+Capacity: 50
+Location: Chennai to Goa
+-----------------------------------------
+Bus No: 9
+Ac: Yes
+Capacity: 40
+Location: chennai to kovai
+-----------------------------------------
+-----------------------------------------
+Enter Bus no: 
+4
+Enter name of passenger: 
+arjun
+Enter Num of Passengers including yourself: 
+4
+Enter date dd-mm-yyyy
+15-09-2022
+Available Seats for BusNo-4 On this date-15-09-2022 is: 65
+Do you want to confirm your booking? (yes/no): yes
+Your Booking is Confirmed
+----------------Booking Details!---------------
+Hi! arjun
+Booking Number: 12
+For your User Id: 15
+Number of Passengers: 4
+Bus No: 4
+Ac: 0
+Location: Chennai to kalkata
+Travel Date: 2022-09-15
+----------------Happy Journey!-----------------
+1. Booking
+2. Cancellation
+3. Show Booking History
+4. Logout
+Choose any one above options
+3
+----------------History of Booking Details!---------------
+Hi! Arjun
+1.
+Your Booking Number: 11
+Number of Passengers: 2
+Bus No: 5
+Ac: 1
+Location: Chennai to Goa
+Travel Date: 2021-06-12
+------------------------------------------------------
+2.
+Your Booking Number: 12
+Number of Passengers: 4
+Bus No: 4
+Ac: 0
+Location: Chennai to kalkata
+Travel Date: 2022-09-15
+------------------------------------------------------
+1. Booking
+2. Cancellation
+3. Show Booking History
+4. Logout
+Choose any one above options
+2
+----------------History of Booking Details!---------------
+Hi! Arjun
+1.
+Your Booking Number: 11
+Number of Passengers: 2
+Bus No: 5
+Ac: 1
+Location: Chennai to Goa
+Travel Date: 2021-06-12
+------------------------------------------------------
+2.
+Your Booking Number: 12
+Number of Passengers: 4
+Bus No: 4
+Ac: 0
+Location: Chennai to kalkata
+Travel Date: 2022-09-15
+------------------------------------------------------
+Enter Booking Number to cancel:
+12
+---Booking Successfully Cancelled!---
+1. Booking
+2. Cancellation
+3. Show Booking History
+4. Logout
+Choose any one above options
+3
+----------------History of Booking Details!---------------
+Hi! Arjun
+1.
+Your Booking Number: 11
+Number of Passengers: 2
+Bus No: 5
+Ac: 1
+Location: Chennai to Goa
+Travel Date: 2021-06-12
+------------------------------------------------------
+1. Booking
+2. Cancellation
+3. Show Booking History
+4. Logout
+Choose any one above options
+4
+****** Logged out Successfully! *******
+--------Welcome to Chennai Travels--------
+1. Sign up
+2. Login
+3. Close Account
+4. Exit
+Please choose an option: 
+1
+****** Welcome to Account Creation Page ******
+Enter user name: 
+Admin
+Please set Password:
+admin
+Please Re-Enter Password:
+admin
+Choose Account type:
+Press 1 for user account or 0 for admin account
+0
+----------------Account Details!---------------
+Hi! Admin
+Your User Id is: 16
+Account Type: Admin
+Sign up successful! Now, please log in to access Your Account.
+--------Welcome to Chennai Travels--------
+1. Sign up
+2. Login
+3. Close Account
+4. Exit
+Please choose an option: 
+2
+****** Welcome to Login Page ******
+Enter your user Id: 
+16
+Enter your Password: 
+admin
+****** Logging in Successfully! *******
+Welcome Admin
+1. Add Bus
+2. Remove Bus
+3. Logout
+Choose any one above options
+1
+Enter Bus Number: 
+10
+Press 1 for Ac or 0 for Non-Ac: 
+1
+Enter From-To-Location of Bus [e.g., Chennai to Delhi]: 
+chennai to Ranji
+Enter Total Capacity of Bus: 
+60
+Bus Added Successfully!...
+1. Add Bus
+2. Remove Bus
+3. Logout
+Choose any one above options
+2
+Enter the Bus Number you want to remove
+10
+Bus Removed Successfully!...
+1. Add Bus
+2. Remove Bus
+3. Logout
+Choose any one above options
+3
+****** Logged out Successfully! *******
+--------Welcome to Chennai Travels--------
+1. Sign up
+2. Login
+3. Close Account
+4. Exit
+Please choose an option: 
+3
+Enter your User Id: 
+15
+Enter your Account password: 
+arju123
+Account closed successfully!..
+--------Welcome to Chennai Travels--------
+1. Sign up
+2. Login
+3. Close Account
+4. Exit
+Please choose an option: 
+4
+---------------Application closed!----------------
