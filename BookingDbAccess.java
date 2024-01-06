@@ -11,13 +11,16 @@ public class BookingDbAccess {
     public int getBookedCount(int busNo, Date date) throws Exception {
         String query = "SELECT SUM(NumOfPassengers) FROM Booking WHERE bus_no = ? AND travel_date = ?";
         Connection con = Db_connection.getConnection();
-        PreparedStatement ps = con.prepareStatement(query);
-        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-        ps.setInt(1, busNo);
-        ps.setDate(2, sqlDate);
-        ResultSet rs = ps.executeQuery();
-        rs.next();
-        return rs.getInt(1);
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            ps.setInt(1, busNo);
+            ps.setDate(2, sqlDate);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            return rs.getInt(1);
+        } finally {
+            con.close();
+        }
     }
 
     public void addBooking(Booking booking) throws Exception {
@@ -46,7 +49,7 @@ public class BookingDbAccess {
 
     public static void displayBookingDetails(Booking booking) throws Exception {
         Connection con = Db_connection.getConnection();
-        String query = "SELECT b.Booking_No, b.passenger_Name, b.NumOfPassengers, b.bus_no, b.travel_date,b.user_id, s.ac, s.fromToLocation FROM Booking b JOIN Bus s ON b.bus_no = s.busNo WHERE b.Booking_No = ?";
+        String query = "SELECT b.Booking_No, b.passenger_Name, b.NumOfPassengers, b.bus_no, b.travel_date, b.user_id, s.ac, s.fromToLocation FROM Booking b JOIN Bus s ON b.bus_no = s.busNo WHERE b.Booking_No = ?";
         try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
             preparedStatement.setInt(1, booking.getBookingNo());
 
@@ -68,8 +71,6 @@ public class BookingDbAccess {
                     System.out.println("No booking found with Booking_No: " + booking.getBookingNo());
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             con.close();
         }
@@ -90,28 +91,46 @@ public class BookingDbAccess {
                     return 0;
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             con.close();
         }
-        return 0;
     }
 
     public void cancelBooking(int bookingNo) throws Exception {
         Connection con = Db_connection.getConnection();
-        String query = "DELETE FROM Booking WHERE Booking_No = ?";
+        String query = "DELETE from Booking where Booking_No = ?";
         try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
             preparedStatement.setInt(1, bookingNo);
             preparedStatement.executeUpdate();
-            System.out.println("---Booking Successfully Cancelled!---");
-        } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             con.close();
         }
     }
-    
+
+    public void cancelBookingByUserId(int userId) throws Exception {
+        Connection con = Db_connection.getConnection();
+        String cnt_query = "SELECT count(*) FROM Booking WHERE user_id = ?";
+        String query = "DELETE FROM Booking WHERE user_id = ?";
+
+        try (PreparedStatement countStatement = con.prepareStatement(cnt_query)) {
+            countStatement.setInt(1, userId);
+            ResultSet rs = countStatement.executeQuery();
+
+            rs.next();
+            int cnt = rs.getInt(1);
+
+            if (cnt > 0) {
+                try (PreparedStatement deleteStatement = con.prepareStatement(query)) {
+                    deleteStatement.setInt(1, userId);
+                    deleteStatement.executeUpdate();
+                }
+            } else {
+                return; // No booking found for the given user, nothing to delete
+            }
+        } finally {
+            con.close();
+        }
+    }
 
     public boolean showingHistory(int userId) throws Exception {
         Connection con = Db_connection.getConnection();
@@ -142,11 +161,10 @@ public class BookingDbAccess {
                     return false;
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             con.close();
         }
+        
         return true;
     }
 }
